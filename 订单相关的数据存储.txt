@@ -1,0 +1,38 @@
+Á½¸ö±í
+create table myorder
+(
+   id varchar(20),
+   date varchar(20),
+   fanQie int,
+   laoYa int,
+   niuRou int,
+   xiaRen int,
+   sanXian int,
+   qinCai int,
+   guoTie int,
+   xianYu int,
+   total int
+);
+
+
+create table total
+( 
+  fanQie int,
+   laoYa int,
+   niuRou int,
+   xiaRen int,
+   sanXian int,
+   qinCai int,
+   guoTie int,
+)
+
+create table  comments
+( uname varchar(20),
+  content varchar(20));
+
+create table user
+( uname varchar(20),
+  upass varchar(20),
+  mail varchar(40));
+
+insert into user values ('haiyaojing','111111','');

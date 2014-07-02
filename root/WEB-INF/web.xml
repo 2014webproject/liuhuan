@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<servlet>
+		<servlet-name>checklogin</servlet-name>
+		<servlet-class>handle.login.CheckLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>checklogin</servlet-name>
+		<url-pattern>/checklogin</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>displayComment</servlet-name>
+		<servlet-class>handle.comment.HandleDisplayComment</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>displayComment</servlet-name>
+		<url-pattern>/displayComment</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Regist</servlet-name>
+		<servlet-class>handle.regist.Regist</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Regist</servlet-name>
+		<url-pattern>/regist</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>handlebook</servlet-name>
+		<servlet-class>handle.book.HandleBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>handlebook</servlet-name>
+		<url-pattern>/handlebook</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>getmybook</servlet-name>
+		<servlet-class>handle.book.GetMyBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getmybook</servlet-name>
+		<url-pattern>/getmybook</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>getpassword</servlet-name>
+		<servlet-class>com.util.mail.testBean</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getpassword</servlet-name>
+		<url-pattern>/getpassword</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>gethot</servlet-name>
+		<servlet-class>handle.hotpage.getHot</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>gethot</servlet-name>
+		<url-pattern>/getHot</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>insertComment</servlet-name>
+		<servlet-class>handle.comment.HandleInsertComment</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>insertComment</servlet-name>
+		<url-pattern>/insertComment</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>other.ImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/imageServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LogOut</servlet-name>
+		<servlet-class>handle.logout.LogOut</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogOut</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>closeConnection</servlet-name>
+		<servlet-class>other.CloseConnection</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>closeConnection</servlet-name>
+		<url-pattern>/closeconnection</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>getAllOrder</servlet-name>
+		<servlet-class>handle.handleorder.HandleOrder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getAllOrder</servlet-name>
+		<url-pattern>/handleorder</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>deleteorder</servlet-name>
+		<servlet-class>handle.handleorder.DeleteOrder</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteorder</servlet-name>
+		<url-pattern>/deleteorder</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<display-name></display-name>
+
+	<filter>
+		<filter-name>busicachefilter</filter-name>
+		<filter-class>filter.HtmlCacheFilter</filter-class>
+		<init-param>
+			<param-name>js</param-name>
+			<param-value>3600</param-value>
+		</init-param>
+		<init-param>
+			<param-name>gif</param-name>
+			<param-value>3600</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jpg</param-name>
+			<param-value>3600</param-value>
+		</init-param>
+		<init-param>
+			<param-name>css</param-name>
+			<param-value>3600</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>busicachefilter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>busicachefilter</filter-name>
+		<url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>busicachefilter</filter-name>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>busicachefilter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>checkUserOnlineFilter</filter-name>
+		<filter-class>filter.CheckUserOnlineFilter</filter-class>
+		<init-param>
+			<param-name>protect</param-name>
+			<param-value>login-regist</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>checkUserOnlineFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
